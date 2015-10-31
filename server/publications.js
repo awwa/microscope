@@ -5,3 +5,7 @@ Meteor.publish('posts', function(/*author*/){
     /*{flagged: false, author: auther}*/
   );
 });
+Meteor.publish('comments', function(postId) {
+  //check(postId, String);
+  return Comments.find({postId: postId});
+});
